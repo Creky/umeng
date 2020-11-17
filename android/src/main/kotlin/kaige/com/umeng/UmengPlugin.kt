@@ -1,7 +1,6 @@
 package kaige.com.umeng
 
 import android.content.Context
-import android.util.Log
 import androidx.annotation.NonNull
 import com.umeng.analytics.MobclickAgent
 import com.umeng.cconfig.RemoteConfigSettings
