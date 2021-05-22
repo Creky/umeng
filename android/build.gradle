@@ -62,9 +62,9 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation  'com.umeng.umsdk:common:9.3.0' // (必选)
-    implementation  'com.umeng.umsdk:asms:1.1.3' // asms包依赖(必选)
-    implementation  'com.umeng.umsdk:crash:0.0.4' // native crash包依赖(必选)
+    implementation  'com.umeng.umsdk:common:9.3.8' // (必选)
+    implementation  'com.umeng.umsdk:asms:1.2.2' // asms包依赖(必选)
+    implementation  'com.umeng.umsdk:crash:0.0.5' // native crash包依赖(必选)
     implementation  'com.umeng.umsdk:oaid_lenovo:1.0.0' // (可选)
     implementation  'com.umeng.umsdk:oaid_mi:1.0.0' // (可选)
     implementation  'com.umeng.umsdk:oaid_oppo:1.0.4' // (可选)
