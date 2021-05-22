@@ -3,8 +3,6 @@ package kaige.com.umeng
 import android.content.Context
 import androidx.annotation.NonNull
 import com.umeng.analytics.MobclickAgent
-import com.umeng.cconfig.RemoteConfigSettings
-import com.umeng.cconfig.UMRemoteConfig
 import com.umeng.commonsdk.UMConfigure
 import com.umeng.umcrash.UMCrash
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -50,10 +48,10 @@ class UmengPlugin: FlutterPlugin, MethodCallHandler {
     val encryptEnabled = call.argument<Boolean>("encryptEnabled")
     UMConfigure.setEncryptEnabled(encryptEnabled ?: false)
 
-    val onlineParamEnabled = call.argument<Boolean>("onlineParamEnabled")
+    /*val onlineParamEnabled = call.argument<Boolean>("onlineParamEnabled")
     if(onlineParamEnabled == true){
       UMRemoteConfig.getInstance().setConfigSettings(RemoteConfigSettings.Builder().setAutoUpdateModeEnabled(true).build())
-    }
+    }*/
 
     val processEventEnabled = call.argument<Boolean>("processEventEnabled")
     UMConfigure.setProcessEvent(processEventEnabled ?: true)
@@ -115,9 +113,9 @@ class UmengPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   private fun getOnlineParam(call: MethodCall, result: Result){
-    val key = call.argument<String>("key")
-    val onlineParam: String? = UMRemoteConfig.getInstance().getConfigValue(key)
-    result.success(onlineParam)
+//    val key = call.argument<String>("key")
+//    val onlineParam: String? = UMRemoteConfig.getInstance().getConfigValue(key)
+//    result.success(onlineParam)
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

@@ -2,12 +2,10 @@ group 'kaige.com.umeng'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.4.10'
+    ext.kotlin_version = '1.5.0'
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         mavenCentral()
+        maven { url 'https://repo1.maven.org/maven2/' }
         jcenter()
         google()
         maven {
@@ -16,21 +14,18 @@ buildscript {
         maven {
             url "https://jitpack.io"
         }
-        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath 'com.android.tools.build:gradle:4.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 rootProject.allprojects {
     repositories {
-        maven { url 'https://maven.aliyun.com/repository/google' }
-        maven { url 'https://maven.aliyun.com/repository/jcenter' }
-        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
         mavenCentral()
+        maven { url 'https://repo1.maven.org/maven2/' }
         jcenter()
         google()
         maven {
@@ -39,7 +34,6 @@ rootProject.allprojects {
         maven {
             url "https://jitpack.io"
         }
-        maven { url 'https://dl.bintray.com/umsdk/release' }
     }
 }
 
@@ -61,13 +55,8 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation  'com.umeng.umsdk:common:9.3.8' // (必选)
-    implementation  'com.umeng.umsdk:asms:1.2.2' // asms包依赖(必选)
-    implementation  'com.umeng.umsdk:crash:0.0.5' // native crash包依赖(必选)
-    implementation  'com.umeng.umsdk:oaid_lenovo:1.0.0' // (可选)
-    implementation  'com.umeng.umsdk:oaid_mi:1.0.0' // (可选)
-    implementation  'com.umeng.umsdk:oaid_oppo:1.0.4' // (可选)
-    implementation  'com.umeng.umsdk:oaid_vivo:1.0.0.1'// (可选)
-    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'com.umeng.umsdk:common:9.3.8' // (必选)
+    implementation 'com.umeng.umsdk:asms:1.2.2' // asms包依赖(必选)
+    implementation 'com.umeng.umsdk:apm:1.2.0'//推荐，错误分析升级为U-APM产品，关注crash数据需集成
+    implementation 'androidx.annotation:annotation:1.2.0'
 }
