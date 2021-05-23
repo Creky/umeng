@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
   }
   void initUmeng()async{
     //TODO
-    await Umeng.init(androidKey: "androidKey", iosKey: "iosKey",onlineParamEnabled: true);
+    await Umeng.init("androidKey", "iosKey", "", onlineParamEnabled: true);
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
